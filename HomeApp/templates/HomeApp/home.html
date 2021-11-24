@@ -1,0 +1,81 @@
+{% extends "HomeApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- About-->
+<section class="content-section bg-light" id="about">
+    <div class="container px-4 px-lg-5 text-center">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-10">
+                <h2>A que nos dedicamos realmente ?</h2>
+                <p class="lead mb-5">
+                    Somos una empresa dedicada al enseñamiento en el ambito de la programacion
+                </p>
+                <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services-->
+<section class="content-section bg-primary text-white text-center" id="services">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading">
+            <h3 class="text-secondary mb-0">Nosotros</h3>
+            <h2 class="mb-5">Quienes somos ?</h2>
+        </div>
+        <div class="row gx-4 gx-lg-5">
+
+            {% for user in users %}
+
+            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                <span class="service-icon rounded-circle mx-auto mb-3"><i class="fas fa-user"></i></span>
+                <h4><strong>{{user.username}}</strong></h4>
+                <p class="text-faded mb-0">{{user.last_name}}</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+<!-- Portfolio-->
+<section class="content-section" id="lastProjects" style="padding-bottom: 0%;">
+    <div class="container px-4 px-lg-5">
+        <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">Proyectos</h3>
+            <h2 class="mb-5 mt-4">Nuestros Últimos Cursos</h2>
+        </div>
+        <div class="row gx-0">
+            
+
+            {% for course in courses %}
+
+            <div class="col-lg-6">
+                <a class="portfolio-item" href="#!">
+                    <div class="caption">
+                        <div class="caption-content">
+                            <div class="h2">{{course.title}}</div>
+                            <p class="mb-0">{{course.description}}</p>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="{{course.image.url}}" alt="..." style="width: 492px; height: 328px;" />
+                </a>
+            </div>
+
+
+            {% endfor %}
+
+
+            
+
+
+    </div>
+</section>
+<!-- Map-->
+<!-- <div class="map" id="contact">
+    <iframe title="Google Maps API"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24450.598505097463!2d3.8275151265766993!3d40.00119165736942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12be040aab08890f%3A0x8145a42f36707c1e!2sCiudadela%20de%20Menorca%2C%20Islas%20Baleares!5e0!3m2!1ses!2ses!4v1637763264714!5m2!1ses!2ses"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div> -->
+{% endblock %}
