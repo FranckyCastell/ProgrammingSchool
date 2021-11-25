@@ -1,0 +1,39 @@
+{% extends "ContactApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="get-in-touch">
+   <h1 class="title">Contacta con Nosotros</h1>
+   <form class="text-white lead" action="" method="POST"> {% csrf_token %}
+
+      <label class="form-label" for="{{ form.name.id_for_label }}">
+         Nombre
+      </label>
+      {{ form.name }}
+
+      <label class="form-label mt-4" for="{{ form.email.id_for_label }}">
+         Correo Electrónico
+      </label>
+      {{ form.email }}
+
+      <label class="form-label mt-4" for="{{ form.phone.id_for_label }}">
+         Numero de Teléfono
+      </label>
+      {{ form.phone }}
+      <div id="emailHelp" class="form-text">Nunca compartiremos su numero de teléfono con nadie más.</div>
+
+      <label class="form-label mt-4" for="{{ form.message.id_for_label }}">
+         Mensaje
+      </label>
+      {{ form.message }}
+
+      <button type="submit" class="btn btn-outline-success mt-4">
+         <i class="far fa-paper-plane"> </i>&nbsp;Enviar
+      </button>
+
+   </form>
+</section>
+
+{% endblock %}
