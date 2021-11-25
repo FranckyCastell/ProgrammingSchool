@@ -11,6 +11,9 @@ class Categories (models.Model):
     description = models.TextField(verbose_name='Description',
                                    blank=False, null=False, max_length=200)
 
+    image = models.ImageField(verbose_name='Image',
+                              upload_to='Categories', null=True, blank=True)
+
     class Meta:
         verbose_name = 'category'
         verbose_name_plural = 'categories'
