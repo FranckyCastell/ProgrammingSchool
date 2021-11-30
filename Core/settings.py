@@ -14,7 +14,8 @@ SECRET_KEY = 'django-insecure-d*c44a@6ev3ue%ohb*-npnf&gkt_&)vq$6ge(@v^j_lun3283%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1',
+                 '192.168.0.15', ]
 
 
 # Application definition
@@ -26,8 +27,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'HomeApp',
-    'CoursesApp',
+    'Core',  # CORE
+    'HomeApp',  # HOME
+    'CoursesApp',  # COURSES
+    'ContactApp',  # CONTACT
+    'CalendarApp',  # CALENDAR
 ]
 
 MIDDLEWARE = [
@@ -94,10 +98,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-#LANGUAGE_CODE = 'es-eu'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-eu'
 
-TIME_ZONE = 'UTC'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
@@ -116,6 +121,16 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# URL TO MEDIA FILES 'IMAGES'
 MEDIA_URL = '/media/'
 
+# MEDIA ROOT FILES 'IMAGES'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# EMAILS API
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = ""  # EMAIL GMAIL
+EMAIL_HOST_PASSWORD = ""  # CREDENTIALS GMAIL

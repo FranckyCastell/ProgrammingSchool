@@ -7,7 +7,7 @@ from CoursesApp.models import Courses
 def courses(request):
 
     url = 'COURSES'
-    description = 'Nuestros Cursos'
+    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, cumque.'
 
     courses = Courses.objects.all()
 

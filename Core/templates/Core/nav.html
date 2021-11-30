@@ -1,0 +1,13 @@
+{% load static %}
+
+<a aria-label="Menu Toggle" class="menu-toggle rounded" href="{% url 'home' %}"><i class="fas fa-bars"></i></a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand"><a href="#page-top">Programming School</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="sidebar-nav-item"><a href="#about">Sobre Nosotros</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'courses' %}">Courses</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'calendar' %}">Calendario</a></li>
+        <li class="sidebar-nav-item"><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+</nav>

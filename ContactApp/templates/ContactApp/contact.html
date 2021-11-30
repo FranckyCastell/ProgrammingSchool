@@ -1,0 +1,47 @@
+{% extends "Core/base.html" %}
+
+{% load static %}
+
+{% block title %} <title> CONTACTO </title> {% endblock %}
+
+{% block content %}
+
+    <main class="container mt-5 text-black">
+        <div class="row">
+            <section class="col-md-6 col-sm-12 lead">
+                <form action="" method="post"> {% csrf_token %}
+                    <div class="fieldWrapper">
+                        <label style="width: 100%;" for="{{ form.name.id_for_label }}">Nombre Completo:
+                        {{ form.name }}
+                        </label>
+                    </div>
+
+                    <div class="fieldWrapper mt-3">
+                        <label style="width: 100%;" for="{{ form.email.id_for_label }}">Email:
+                        {{ form.email }}
+                        </label>
+                    </div>
+
+                    <div class="fieldWrapper mt-3">
+                        <label style="width: 100%;" for="{{ form.phone.id_for_label }}">Teléfono:
+                        {{ form.phone }}
+                        </label>
+                    </div>
+
+                    <div class="fieldWrapper mt-3">
+                        <label style="width: 100%;" for="{{ form.email.id_for_label }}">Mensaje:
+                        {{ form.message }}
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-success mt-3"> Enviar </button>
+                </form>
+            </section>
+
+            <section class="col-md-6 col-sm-12">
+                <img src="{% static 'Core/assets/img/imgEmail.webp' %}" alt="Email Image"
+                    style="max-width: 100%; height: 100%;">
+            </section>
+        </div>
+    </main>
+{% endblock %}

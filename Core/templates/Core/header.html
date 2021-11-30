@@ -1,0 +1,15 @@
+{% load static %}
+<header class="masthead d-flex align-items-center" id="page-top">
+    <div class="container px-4 px-lg-5 text-center">
+        <h1 class="mb-1">{{url}}</h1>
+        <h3 class="mb-5"><em>{{description}}</em></h3>
+        <a class="btn btn-primary btn-xl" href="#">Find Out More</a>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success mt-3 mx-auto" role="alert" style="width: 75%;">
+                <p class="mb-0">{{message}}</p>
+              </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</header>
