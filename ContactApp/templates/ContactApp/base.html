@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- HEAD TEMPLATE  -->
+        {% include "ContactApp/head.html" %}
+    <!-- END HEAD TEMPLATE  -->
+
+    <body class="backgroundImage">
+
+        <!-- NAV TEMPLATE  -->
+            {% include "HomeApp/nav.html" %}
+        <!-- END NAV TEMPLATE  -->
+
+
+        <!-- MAIN TEMPLATE  -->
+            {% block content %}
+            {% endblock %}
+        <!-- END MAIN TEMPLATE  -->
+
+
+        <!-- FOOTER TEMPLATE  -->
+            {% include "HomeApp/footer.html" %}
+        <!-- END FOOTER TEMPLATE  -->
+
+    </body>
+
+</html>
