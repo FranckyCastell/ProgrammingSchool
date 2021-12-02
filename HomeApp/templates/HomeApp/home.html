@@ -32,41 +32,9 @@
     <div class="container px-4 px-lg-5">
         <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0">Proyectos</h3>
-<<<<<<< HEAD
             <h2 class="text-black mb-5 mt-4">Nuestros Últimos Cursos</h2>
-=======
-            <h2 class="mb-5 mt-4">Nuestras Categorías</h2>
->>>>>>> 67512eb61fdb13a3d33d410f754f85486704b201
         </div>
-        <div class="row gx-0">
-
-
-            {% for category in categories %}
-
-            <div class="col-lg-6">
-                <a class="portfolio-item" href="#!">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <div class="h2">{{category.name}}</div>
-                            <p class="mb-0 fw-bold">{{category.description}}</p>
-                        </div>
-                    </div>
-                    <img class="img-fluid" src="{{category.image.url}}" alt="{{category.name}}" style="width: 610px; height: 330px;" />
-                </a>
-            </div>
-
-            {% endfor %}
-
-
-
-
-
-        </div>
+        
+        
 </section>
-<!-- Map-->
-<!-- <div class="map" id="contact">
-    <iframe title="Google Maps API"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24450.598505097463!2d3.8275151265766993!3d40.00119165736942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12be040aab08890f%3A0x8145a42f36707c1e!2sCiudadela%20de%20Menorca%2C%20Islas%20Baleares!5e0!3m2!1ses!2ses!4v1637763264714!5m2!1ses!2ses"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div> -->
 {% endblock %}
