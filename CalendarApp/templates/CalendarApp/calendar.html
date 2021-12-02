@@ -1,15 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "Core/base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% load static %}
 
-<body>
-    <p>calendar</p>
-</body>
+{% block title %} <title> CALENDARIO </title> {% endblock %}
 
-</html>
+{% block content %}
+<main class="container">
+    <section class="text-center">
+
+        <div class="row mt-4">
+            <p class="text-black lead display-6"> Programación de Eventos </p>
+        </div>
+
+        <div class="row mt-4">
+            <iframe
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showTitle=0&showPrint=0&showCalendars=0&showTz=0&src=dnFyMWo2NTVoOXI5ZDBxZDJsODYydDhhcWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5"
+                style="border-width:0" width="800" height="600" frameborder="0" scrolling="no">
+            </iframe>
+        </div>
+
+    </section>
+
+    <section class="text-black lead row">
+        <form style="margin: auto;" class="col-md-8 col-sm-12" action="" method="post"> {% csrf_token %}
+
+            <div class="fieldWrapper mt-3">
+                <label style="width: 100%;" for="{{ form.email.id_for_label }}">Email:
+                {{ form.email }}
+                </label>
+            </div>
+
+            <div class="fieldWrapper mt-3">
+                <label style="width: 100%;" for="{{ form.phone.id_for_label }}">Teléfono:
+                {{ form.phone }}
+                </label>
+            </div>
+
+            <div class="fieldWrapper mt-3">
+                <label style="width: 100%;" for="{{ form.date.id_for_label }}">Data:
+                {{ form.date }}
+                </label>
+            </div>
+
+            <div class="fieldWrapper mt-3">
+                <label style="width: 100%;" for="{{ form.duration.id_for_label }}">Duración:
+                {{ form.duration }}
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-outline-success mt-3"> Enviar </button>
+        </form>
+    </section>
+</main>
+
+{% endblock %}
