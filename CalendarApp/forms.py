@@ -3,6 +3,9 @@ from django import forms
 
 class CalendarForm(forms.Form):
 
+    name = forms.CharField (label='Name', widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Marc Picó Mascaro'}), required=True)
+
     email = forms.EmailField(label='Email', widget=forms.EmailInput(
         attrs={'class': 'form-control', 'placeholder': 'myname@email.com'}), required=True)
 
@@ -12,5 +15,7 @@ class CalendarForm(forms.Form):
     date = forms.DateField(
         label='Date', widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}), required=True)
 
-    duration = forms.CharField(label='Duration',
-                               widget=forms.TextInput(attrs={'type': 'number', 'class': 'form-control', 'placeholder': '30 min'}), required=True)
+    time = forms.CharField(label='Time',
+                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '10:00h - 11:00h'}), required=True)
+
+    

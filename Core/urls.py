@@ -9,6 +9,8 @@ urlpatterns = [
     path('', include('CoursesApp.urls')),
     path('', include('ContactApp.urls')),
     path('', include('CalendarApp.urls')),
+    path('', include('AboutApp.urls')),
+    path('', include('RegisterApp.urls')),
 ]
 
 

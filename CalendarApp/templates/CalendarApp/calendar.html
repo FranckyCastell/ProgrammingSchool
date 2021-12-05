@@ -21,34 +21,49 @@
 
     </section>
 
+    <section class="row mt-5 lead text-black text-center">
+        <p class="display-6">Añadir Cita</p>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis, nostrum voluptates corporis odit
+            veritatis aliquid odio quae ducimus reprehenderit! </p>
+    </section>
+
     <section class="text-black lead row">
         <form style="margin: auto;" class="col-md-8 col-sm-12" action="" method="post"> {% csrf_token %}
+            <hr class="mt-5">
+
+            <div class="fieldWrapper mt-3">
+                <label style="width: 100%;" for="{{ form.name.id_for_label }}">Nombre:
+                    {{ form.name }}
+                </label>
+            </div>
+
 
             <div class="fieldWrapper mt-3">
                 <label style="width: 100%;" for="{{ form.email.id_for_label }}">Email:
-                {{ form.email }}
+                    {{ form.email }}
                 </label>
             </div>
 
             <div class="fieldWrapper mt-3">
                 <label style="width: 100%;" for="{{ form.phone.id_for_label }}">Teléfono:
-                {{ form.phone }}
+                    {{ form.phone }}
                 </label>
             </div>
 
             <div class="fieldWrapper mt-3">
                 <label style="width: 100%;" for="{{ form.date.id_for_label }}">Data:
-                {{ form.date }}
+                    {{ form.date }}
                 </label>
             </div>
 
             <div class="fieldWrapper mt-3">
-                <label style="width: 100%;" for="{{ form.duration.id_for_label }}">Duración:
-                {{ form.duration }}
+                <label style="width: 100%;" for="{{ form.time.id_for_label }}">Duración:
+                    {{ form.time }}
                 </label>
             </div>
 
             <button type="submit" class="btn btn-outline-success mt-3"> Enviar </button>
+            <hr>
         </form>
     </section>
 </main>

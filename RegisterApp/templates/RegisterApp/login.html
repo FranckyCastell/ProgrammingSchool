@@ -1,0 +1,39 @@
+<!-- EXTENDS BASE.HTML TEMPLATE -->
+{% extends "RegisterApp/base.html" %}
+
+<!-- LOAD STATIC -->
+{% load static %}
+
+<!-- CODE OF BODY PAGE -->
+{% block content %}
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 rounded-3">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5 mt-5 pt-5">
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> 
+                        <img
+                            src="{% static 'Core/assets/img/login.jpg'%}" class="image">
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 pt-5">
+                <div class="card2 card border-0 px-4 py-5">
+                    <form class="lead" method="POST" action=""> {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit" id="submit" class="btn btn-outline-success text-center">Login</button>
+                    </form>
+                    <div class="row mt-4">
+                        <small class="font-weight-bold">No tienes cuenta?
+                            <a href="register" class="text-danger ">Registrate !</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
