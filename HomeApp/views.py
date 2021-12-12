@@ -12,6 +12,5 @@ def home(request):
     categories = Categories.objects.all()
     users = Users.objects.all()
 
-    context = {'url': url, 'description': description,
-               'users': users, 'categories': categories}
+    context = {'url': url, 'description': description}
     return render(request, 'HomeApp/home.html', context)

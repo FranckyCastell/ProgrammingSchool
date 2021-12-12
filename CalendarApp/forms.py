@@ -3,7 +3,7 @@ from django import forms
 
 class CalendarForm(forms.Form):
 
-    name = forms.CharField (label='Name', widget=forms.TextInput(
+    name = forms.CharField(label='Name', widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': 'Marc Picó Mascaro'}), required=True)
 
     email = forms.EmailField(label='Email', widget=forms.EmailInput(
@@ -12,10 +12,5 @@ class CalendarForm(forms.Form):
     phone = forms.IntegerField(label='Phone', widget=forms.NumberInput(
         attrs={'class': 'form-control', 'placeholder': '123456789'}), required=True)
 
-    date = forms.DateField(
-        label='Date', widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}), required=True)
-
-    time = forms.CharField(label='Time',
-                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '10:00h - 11:00h'}), required=True)
-
-    
+    message = forms.CharField(label='Mensaje', widget=forms.Textarea(
+        attrs={'class': 'form-control', 'rows': 5}), required=True)

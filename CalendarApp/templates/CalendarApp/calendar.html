@@ -8,16 +8,74 @@
 <main class="container">
     <section class="text-center">
 
-        <div class="row mt-4">
-            <p class="text-black lead display-6"> Programación de Eventos </p>
-        </div>
+        <section class="row">
 
-        <div class="row mt-4">
-            <iframe
-                src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showTitle=0&showPrint=0&showCalendars=0&showTz=0&src=dnFyMWo2NTVoOXI5ZDBxZDJsODYydDhhcWdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5"
-                style="border-width:0" width="800" height="600" frameborder="0" scrolling="no">
-            </iframe>
-        </div>
+            <div id='calendar' class="col-12 text-dark card pt-4 px-4">
+            </div>
+    
+        </section>
+    
+        <script>
+    
+            document.addEventListener('DOMContentLoaded', function () {
+                var calendarEl = document.getElementById('calendar');
+    
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+    
+                    timeZone: 'local',
+    
+                    locale: 'es',
+    
+                    themeSystem: 'bootstrapFontAwesome',
+    
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                    },
+    
+                    titleFormat: {
+                        year: 'numeric', month: 'long'
+                    },
+    
+                    buttonText: {
+                        today: 'Hoy',
+                        month: 'Mes',
+                        week: 'Semana',
+                        day: 'Día',
+                        list: 'Lista'
+                    },
+    
+                    height: 600,
+    
+                    nowIndicator: true,
+    
+                    selectable: true,
+    
+                    navLinks: true,
+    
+                    eventBackgroundColor: '#ffa500',
+    
+                    events: [
+    
+                        {% for event in events %}
+                        
+                            {
+                        title: '{{event.title}}',
+                        start: '{{event.start}}',
+                        end: '{{event.end}}',
+                        url: '{{event.url}}',
+                        classNames: ['myTextStyle']
+                    },
+    
+                    {% endfor %}
+                    ],
+                    
+                });
+            calendar.render();
+            });
+    
+        </script>
 
     </section>
 
@@ -51,14 +109,8 @@
             </div>
 
             <div class="fieldWrapper mt-3">
-                <label style="width: 100%;" for="{{ form.date.id_for_label }}">Data:
-                    {{ form.date }}
-                </label>
-            </div>
-
-            <div class="fieldWrapper mt-3">
-                <label style="width: 100%;" for="{{ form.time.id_for_label }}">Duración:
-                    {{ form.time }}
+                <label style="width: 100%;" for="{{ form.date.id_for_label }}">Mensaje:
+                    {{ form.message }}
                 </label>
             </div>
 
